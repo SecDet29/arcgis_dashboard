@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой ArcGIS Dashboard</title>
+    <style>
+        body { font-family: Arial; margin: 0; padding: 20px; }
+        #map { height: 400px; width: 100%; background: #eee; }
+        #data-panel { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Мой Кастомный Дашборд</h1>
+    <div id="map"></div>
+    <div id="data-panel">Здесь будут данные из ArcGIS...</div>
+
+    <!-- Подключаем ArcGIS API for JavaScript -->
+    <link rel="stylesheet" href="https://js.arcgis.com/4.28/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.28/"></script>
+    
+    <script>
+        // Ваш JavaScript код (пример ниже)
+        require(["esri/Map", "esri/views/MapView"], function(Map, MapView) {
+            const map = new Map({ basemap: "streets-navigation-vector" });
+            const view = new MapView({
+                container: "map",
+                map: map,
+                center: [74.5698, 42.8746], // Координаты (например, Бишкек)
+                zoom: 12
+            });
+        });
+    </script>
+</body>
+</html>
